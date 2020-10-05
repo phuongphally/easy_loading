@@ -60,20 +60,20 @@ class EasyLoadingListView extends StatefulWidget {
         this.onLoadMoreFinished});
 
   @override
-  EasyLoadingListViewState createState() {
-    return EasyLoadingListViewState();
+  _EasyLoadingListViewState createState() {
+    return _EasyLoadingListViewState();
   }
 }
 
-class EasyLoadingListViewState
-    extends State<EasyLoadingListView> {
+class _EasyLoadingListViewState extends State<EasyLoadingListView> {
   bool _loadingMore = false;
   final PublishSubject<bool> _loadingMoreSubject = PublishSubject<bool>();
   Stream<bool> _loadingMoreStream;
 
-  EasyLoadingListViewState() {
-    _loadingMoreStream =
-        _loadingMoreSubject.switchMap((shouldLoadMore) => loadMore());
+  @override
+  void initState() {
+    Future.microtask(() =>  _loadingMoreStream = _loadingMoreSubject.switchMap((shouldLoadMore) => loadMore()));
+    super.initState();
   }
 
   @override

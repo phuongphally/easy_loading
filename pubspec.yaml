@@ -1,8 +1,8 @@
 name: easy_loading
-description: Easy Loading
-version: 0.0.1
-author:
-homepage:
+description: Flutter plugin for loading more listview and grid view.
+version: 0.0.2
+author: phuongphally@gmail.com
+homepage: https://github.com/phuongphally/easy_loading
 
 environment:
   sdk: ">=2.7.0 <3.0.0"

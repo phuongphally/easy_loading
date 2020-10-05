@@ -2,7 +2,9 @@
 
 Easy Loading
 
-## Getting Started
+## Install
+`easy_loading: ^0.0.1`
+
 
 This project is a starting point for a Dart
 [package](https://flutter.dev/developing-packages/),
