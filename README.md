@@ -6,7 +6,7 @@
 
 ```
 dependencies:
-  easy_loading: ^0.0.1
+  easy_loading: ^latest
 ```
 
 ## Usage
