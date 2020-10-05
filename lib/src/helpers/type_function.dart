@@ -1,4 +1,3 @@
-
 typedef LoadMore = Future Function();
 
 typedef OnLoadMore = void Function();

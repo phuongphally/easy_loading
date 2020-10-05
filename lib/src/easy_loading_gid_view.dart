@@ -40,24 +40,24 @@ class EasyLoadingGridView extends StatefulWidget {
 
   EasyLoadingGridView(
       {@required this.hasMore,
-        @required this.loadMore,
-        this.loadMoreOffsetFromBottom = 0,
-        this.key,
-        this.scrollDirection = Axis.vertical,
-        this.reverse = false,
-        this.controller,
-        this.primary,
-        this.physics,
-        this.shrinkWrap = false,
-        this.padding,
-        this.itemExtent,
-        @required this.itemBuilder,
-        @required this.itemCount,
-        this.addAutomaticKeepAlives = true,
-        this.addRepaintBoundaries = true,
-        this.cacheExtent,
-        this.onLoadMore,
-        this.onLoadMoreFinished});
+      @required this.loadMore,
+      this.loadMoreOffsetFromBottom = 0,
+      this.key,
+      this.scrollDirection = Axis.vertical,
+      this.reverse = false,
+      this.controller,
+      this.primary,
+      this.physics,
+      this.shrinkWrap = false,
+      this.padding,
+      this.itemExtent,
+      @required this.itemBuilder,
+      @required this.itemCount,
+      this.addAutomaticKeepAlives = true,
+      this.addRepaintBoundaries = true,
+      this.cacheExtent,
+      this.onLoadMore,
+      this.onLoadMoreFinished});
 
   @override
   _EasyLoadingGridViewState createState() {
@@ -72,7 +72,8 @@ class _EasyLoadingGridViewState extends State<EasyLoadingGridView> {
 
   @override
   void initState() {
-    Future.microtask(() =>   _loadingMoreStream = _loadingMoreSubject.switchMap((shouldLoadMore) => loadMore()));
+    Future.microtask(() => _loadingMoreStream =
+        _loadingMoreSubject.switchMap((shouldLoadMore) => loadMore()));
     super.initState();
   }
 
@@ -91,9 +92,14 @@ class _EasyLoadingGridViewState extends State<EasyLoadingGridView> {
             shrinkWrap: widget.shrinkWrap,
             padding: widget.padding,
             gridDelegate: null,
-           // itemExtent: widget.itemExtent,
+            // itemExtent: widget.itemExtent,
             itemBuilder: (itemBuilderContext, index) {
-              if (!_loadingMore && index == widget.itemCount() - widget.loadMoreOffsetFromBottom - 1 && widget.hasMore()) {
+              if (!_loadingMore &&
+                  index ==
+                      widget.itemCount() -
+                          widget.loadMoreOffsetFromBottom -
+                          1 &&
+                  widget.hasMore()) {
                 _loadingMore = true;
                 _loadingMoreSubject.add(true);
               }
