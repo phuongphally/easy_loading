@@ -1,9 +1,13 @@
 # easy_loading
 
-Easy Loading
 
-## Install
-`easy_loading: ^0.0.1`
+
+## Install 
+
+```
+dependencies:
+  easy_loading: ^0.0.1
+```
 
 ## Usage
 
